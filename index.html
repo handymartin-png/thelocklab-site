@@ -5,210 +5,224 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>The Lock Lab | Locksmith Dorset & Hampshire</title>
-  <meta name="description" content="Local locksmith covering Dorset & Hampshire. Emergency lockouts, lock changes, burglary repairs and key safe fitting. DBS checked and fully insured. Call 07385 337800." />
+  <meta name="description" content="24/7 emergency locksmith serving Dorset & Hampshire. Lockouts, lock changes, burglary repairs, uPVC door issues, and key safe fitting. Call 07385 337800." />
   <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph (nice previews when shared) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="The Lock Lab | Locksmith Dorset & Hampshire" />
-  <meta property="og:description" content="Emergency lockouts, lock changes, burglary repairs and key safe fitting. DBS checked and fully insured. Call 07385 337800." />
+  <meta property="og:description" content="24/7 emergency locksmith serving Dorset & Hampshire. Lockouts, lock changes, burglary repairs and key safe fitting. Call 07385 337800." />
   <meta property="og:type" content="website" />
 
   <style>
     :root{
-      --bg:#0b1f27;
-      --panel:#0f2f3a;
-      --text:#eaf2f5;
-      --muted:#b9c7cf;
-      --gold:#ffd700;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 18px;
-      --max: 1100px;
+      --primary:#1f4ea3;   /* blue */
+      --accent:#f4b400;    /* gold */
+      --text:#111;
+      --muted:#5b6470;
+      --line:#e6e8ec;
+      --bg:#ffffff;
+      --soft:#f6f8fb;
+      --radius:14px;
+      --max:1100px;
+      --shadow: 0 10px 30px rgba(16,24,40,.08);
     }
 
     *{box-sizing:border-box}
     body{
       margin:0;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 20% 10%, rgba(255,215,0,.12), transparent 55%),
-                  radial-gradient(1000px 500px at 80% 0%, rgba(34,211,238,.12), transparent 55%),
-                  var(--bg);
+      background:var(--bg);
       color:var(--text);
-      line-height:1.45;
+      line-height:1.5;
     }
-
     a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+
     .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
 
     /* Top bar */
     .topbar{
-      position:sticky; top:0; z-index:50;
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,255,255,.92);
       backdrop-filter: blur(10px);
-      background: rgba(11,31,39,.72);
-      border-bottom: 1px solid rgba(255,255,255,.06);
+      border-bottom:1px solid var(--line);
     }
     .topbar-inner{
-      display:flex; align-items:center; justify-content:space-between;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
       padding:12px 0;
-      gap:12px;
     }
     .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight:800; letter-spacing:.2px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 190px;
     }
-    .badge{
-      display:inline-flex; align-items:center; justify-content:center;
-      width:36px; height:36px;
-      border-radius:12px;
-      background: linear-gradient(145deg, rgba(255,215,0,.18), rgba(34,211,238,.12));
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow: var(--shadow);
-      font-weight:900;
-      color:var(--gold);
+    .brand img{
+      height:56px;
+      width:auto;
     }
     .nav{
-      display:flex; align-items:center; gap:14px;
+      display:flex;
+      gap:16px;
       font-size:14px;
       color:var(--muted);
     }
     .nav a:hover{color:var(--text)}
     .cta{
-      display:flex; align-items:center; gap:10px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
     }
+
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       gap:10px;
       padding:12px 14px;
-      border-radius: 999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.06);
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
       color:var(--text);
       font-weight:700;
       cursor:pointer;
-      transition: transform .08s ease, background .2s ease;
+      transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
       white-space:nowrap;
     }
-    .btn:hover{background: rgba(255,255,255,.09)}
+    .btn:hover{box-shadow: 0 8px 22px rgba(16,24,40,.10)}
     .btn:active{transform: translateY(1px)}
-    .btn-gold{
-      background: linear-gradient(135deg, rgba(255,215,0,.95), rgba(255,215,0,.70));
-      color:#1b1b1b;
-      border: none;
+    .btn-primary{
+      background:var(--primary);
+      color:#fff;
+      border:none;
     }
-    .btn-gold:hover{filter:brightness(1.03)}
+    .btn-accent{
+      background:var(--accent);
+      color:#111;
+      border:none;
+    }
 
     /* Hero */
     .hero{
-      padding:42px 0 10px;
+      padding:26px 0 10px;
     }
     .hero-grid{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:18px;
+      grid-template-columns: 1.05fr .95fr;
+      gap:16px;
       align-items:stretch;
     }
-    @media (max-width: 900px){
-      .hero-grid{grid-template-columns:1fr}
-      .nav{display:none}
-    }
-
     .card{
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
       overflow:hidden;
     }
     .hero-copy{
-      padding:26px;
+      padding:22px;
     }
     .kicker{
       display:inline-flex;
       gap:8px;
       align-items:center;
-      padding:6px 10px;
+      padding:7px 10px;
       border-radius:999px;
       font-size:12px;
-      color: var(--muted);
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.15);
+      color:var(--muted);
+      border:1px solid var(--line);
+      background:var(--soft);
     }
     h1{
-      margin:14px 0 10px;
-      font-size: 42px;
-      line-height: 1.05;
-      letter-spacing:-.8px;
-    }
-    @media (max-width: 450px){
-      h1{font-size:34px}
+      margin:12px 0 10px;
+      font-size:40px;
+      line-height:1.08;
+      letter-spacing:-.7px;
     }
     .sub{
+      margin:0 0 14px;
       color:var(--muted);
       font-size:16px;
-      margin: 0 0 16px;
-      max-width: 60ch;
+      max-width:62ch;
     }
     .trust{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
-      margin: 14px 0 18px;
-      color: var(--muted);
-      font-size: 14px;
+      margin:14px 0 16px;
     }
     .pill{
       padding:8px 10px;
       border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.12);
+      border:1px solid var(--line);
+      background:var(--soft);
+      color:#28323d;
+      font-size:13px;
+      font-weight:650;
     }
     .hero-actions{
-      display:flex; flex-wrap:wrap;
+      display:flex;
+      flex-wrap:wrap;
       gap:10px;
-      margin-top: 14px;
+      margin-top:12px;
+    }
+    .note{
+      margin:12px 0 0;
+      color:var(--muted);
+      font-size:13px;
     }
 
     /* Images */
-    .img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      filter: saturate(1.05) contrast(1.02);
-    }
     .img-wrap{
       position:relative;
       min-height: 360px;
     }
+    .img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
     .img-overlay{
-      position:absolute; inset:0;
-      background: linear-gradient(180deg, rgba(11,31,39,.10), rgba(11,31,39,.85));
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.55));
     }
     .img-caption{
       position:absolute;
-      left:18px; right:18px; bottom:16px;
-      color: rgba(234,242,245,.92);
+      left:16px;
+      right:16px;
+      bottom:14px;
+      color:#fff;
       font-weight:800;
-      font-size: 18px;
-      letter-spacing:.2px;
-      text-shadow: 0 8px 26px rgba(0,0,0,.6);
+      font-size:16px;
+      text-shadow: 0 10px 25px rgba(0,0,0,.45);
     }
 
     /* Sections */
-    section{padding: 22px 0}
+    section{padding:22px 0}
     .section-title{
-      display:flex; align-items:flex-end; justify-content:space-between;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
       gap:12px;
-      margin: 6px 0 14px;
+      margin:8px 0 14px;
     }
     .section-title h2{
       margin:0;
-      font-size: 22px;
-      letter-spacing: -.2px;
+      font-size:22px;
+      letter-spacing:-.2px;
     }
     .section-title p{
       margin:0;
-      color: var(--muted);
-      font-size: 14px;
+      color:var(--muted);
+      font-size:14px;
     }
 
     .grid3{
@@ -216,8 +230,6 @@
       grid-template-columns: repeat(3, 1fr);
       gap:12px;
     }
-    @media (max-width: 900px){ .grid3{grid-template-columns:1fr} }
-
     .service{
       padding:16px;
     }
@@ -229,17 +241,15 @@
       grid-template-columns: 1fr 1fr;
       gap:12px;
     }
-    @media (max-width: 900px){ .split{grid-template-columns:1fr} }
-
     .mini-img{
       height: 220px;
       border-radius: var(--radius);
       overflow:hidden;
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow: var(--shadow);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      background:#fff;
     }
 
-    /* Contact */
     .contact{
       padding:18px;
     }
@@ -249,29 +259,37 @@
       gap:12px;
       margin-top: 10px;
     }
-    @media (max-width: 900px){ .contact .row{grid-template-columns:1fr} }
-    .contact a.link{
-      color: var(--gold);
+    .link{
+      color:var(--primary);
       font-weight:800;
     }
-    .note{
-      color: var(--muted);
-      font-size: 13px;
-      margin-top: 10px;
-    }
 
-    /* Footer */
     footer{
-      padding: 26px 0 40px;
-      color: var(--muted);
-      font-size: 13px;
-      border-top: 1px solid rgba(255,255,255,.06);
-      margin-top: 10px;
+      padding:22px 0 36px;
+      color:var(--muted);
+      font-size:13px;
+      border-top:1px solid var(--line);
+      margin-top: 6px;
+      background:#fff;
     }
     .footer-inner{
-      display:flex; flex-wrap:wrap;
-      align-items:center; justify-content:space-between;
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
       gap:10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
+      .nav{display:none}
+      h1{font-size:34px}
+      .grid3{grid-template-columns:1fr}
+      .split{grid-template-columns:1fr}
+      .contact .row{grid-template-columns:1fr}
+      .brand{min-width:auto}
+      .brand img{height:52px}
     }
   </style>
 
@@ -283,23 +301,17 @@
     "name":"The Lock Lab",
     "areaServed":["Dorset","Hampshire"],
     "telephone":"+447385337800",
-    "url":"",
-    "description":"Local locksmith covering Dorset & Hampshire. Emergency lockouts, lock changes, burglary repairs and key safe fitting.",
-    "sameAs":[]
+    "email":"info@thelocklab.co.uk",
+    "description":"24/7 emergency locksmith serving Dorset & Hampshire. Lockouts, lock changes, burglary repairs, uPVC door issues and key safe fitting."
   }
   </script>
 </head>
 
 <body>
-
   <div class="topbar">
     <div class="wrap topbar-inner">
       <div class="brand">
-        <div class="badge">LL</div>
-        <div>
-          <div style="font-size:14px; line-height:1.1;">The Lock Lab</div>
-          <div style="font-size:12px; color:var(--muted);">Locksmith & Security</div>
-        </div>
+        <img src="logo.png" alt="The Lock Lab - Locksmith & Security" />
       </div>
 
       <div class="nav">
@@ -309,8 +321,8 @@
       </div>
 
       <div class="cta">
-        <a class="btn" href="#contact">Get a Quote</a>
-        <a class="btn btn-gold" href="tel:07385337800">Call 07385 337800</a>
+        <a class="btn" href="mailto:info@thelocklab.co.uk">Email</a>
+        <a class="btn btn-accent" href="tel:07385337800">Call 07385 337800</a>
       </div>
     </div>
   </div>
@@ -318,11 +330,12 @@
   <div class="hero">
     <div class="wrap hero-grid">
       <div class="card hero-copy">
-        <div class="kicker">🚪 Fast local response • Dorset & Hampshire</div>
-        <h1>Locked out? Need a lock changed?</h1>
+        <div class="kicker">🔧 Local, fast response • Dorset & Hampshire</div>
+
+        <h1>24/7 Emergency Locksmith</h1>
         <p class="sub">
-          The Lock Lab provides straightforward, no-nonsense locksmith help for homes and small businesses.
-          Emergency lockouts, lock replacements, burglary repairs and key safe fitting.
+          Locked out, had a break-in, or need locks changed? The Lock Lab provides straightforward, professional
+          locksmith support for homes and small businesses — no waffle, just solutions.
         </p>
 
         <div class="trust">
@@ -333,18 +346,19 @@
         </div>
 
         <div class="hero-actions">
-          <a class="btn btn-gold" href="tel:07385337800">📞 Call Now</a>
-          <a class="btn" href="sms:07385337800">💬 Text</a>
-          <a class="btn" href="#services">See Services</a>
+          <a class="btn btn-accent" href="tel:07385337800">📞 Call 07385 337800</a>
+          <a class="btn btn-primary" href="sms:07385337800">💬 Text (send a photo)</a>
+          <a class="btn" href="#services">See services</a>
         </div>
 
-        <p class="note">If it’s urgent, call. If you prefer, text a photo of the lock/door and your area.</p>
+        <p class="note">
+          Tip: text a photo of the lock/door + your area + what happened (“locked out”, “key snapped”, “burglary repair”).
+        </p>
       </div>
 
-      <div class="card img-wrap" aria-label="Stock image of a UK front door and lock">
-        <!-- Stock image (Unsplash source endpoint) -->
-        <img class="img" alt="House front door and lock"
-             src="https://source.unsplash.com/1200x900/?uk,house,front%20door,lock" />
+      <div class="card img-wrap" aria-label="Door and lock image">
+        <img class="img" alt="Front door lock"
+          src="https://images.unsplash.com/photo-1527030280862-64139fba04ca?auto=format&fit=crop&w=1800&q=80" />
         <div class="img-overlay"></div>
         <div class="img-caption">Home & business locksmith support</div>
       </div>
@@ -355,7 +369,7 @@
     <div class="wrap">
       <div class="section-title">
         <h2>Services</h2>
-        <p>Focused on the jobs that pay and build trust.</p>
+        <p>Focused on the jobs that matter.</p>
       </div>
 
       <div class="grid3">
@@ -365,23 +379,23 @@
         </div>
         <div class="card service">
           <h3>Lock changes & upgrades</h3>
-          <p>Replace faulty or weak locks. Advice on better cylinders and hardware.</p>
+          <p>Replace faulty or weak locks. Advice on sensible upgrades (no upsell nonsense).</p>
         </div>
         <div class="card service">
           <h3>Burglary repairs</h3>
-          <p>Make safe, repair/replace damaged locks and restore security fast.</p>
-        </div>
-        <div class="card service">
-          <h3>Key safe supply & fitting</h3>
-          <p>Ideal for carers, family access and managed properties.</p>
+          <p>Make safe fast and restore security after damage or forced entry.</p>
         </div>
         <div class="card service">
           <h3>uPVC / composite door issues</h3>
-          <p>Jammed mechanisms, handles, alignment problems and lock faults.</p>
+          <p>Jammed locks, failed mechanisms, handles, alignment and locking problems.</p>
         </div>
         <div class="card service">
-          <h3>Home security checks</h3>
-          <p>Quick, practical upgrades—no hard sell, just what’s worth doing.</p>
+          <h3>Key safe supply & fitting</h3>
+          <p>Great for carers, family access and managed properties.</p>
+        </div>
+        <div class="card service">
+          <h3>Security checks</h3>
+          <p>Quick practical improvements — what’s worth doing, what’s not.</p>
         </div>
       </div>
     </div>
@@ -397,24 +411,28 @@
       <div class="split">
         <div class="card contact">
           <h3 style="margin:0 0 6px;">Dorset</h3>
-          <p style="margin:0; color:var(--muted);">Bournemouth • Poole • Christchurch • Wareham • Wimborne • and nearby</p>
-          <p class="note">If you’re not sure, call/text your postcode and I’ll confirm.</p>
+          <p style="margin:0; color:var(--muted);">
+            Bournemouth • Poole • Christchurch • Wimborne • Wareham • and nearby
+          </p>
 
-          <hr style="border:0; border-top:1px solid rgba(255,255,255,.08); margin:14px 0;">
+          <hr style="border:0; border-top:1px solid var(--line); margin:14px 0;">
 
           <h3 style="margin:0 0 6px;">Hampshire</h3>
-          <p style="margin:0; color:var(--muted);">Southampton • New Forest • Ringwood • Lymington • and nearby</p>
-          <p class="note">Local jobs only — fast response matters more than “covering the whole UK”.</p>
+          <p style="margin:0; color:var(--muted);">
+            Southampton • New Forest • Ringwood • Lymington • and nearby
+          </p>
+
+          <p class="note">Not sure? Call/text your postcode and I’ll confirm.</p>
         </div>
 
         <div>
           <div class="mini-img" style="margin-bottom:12px;">
-            <img class="img" alt="Stock image of a door lock"
-                 src="https://source.unsplash.com/1200x900/?door,lock,cylinder" />
+            <img class="img" alt="Keys and lock"
+              src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=1800&q=80" />
           </div>
           <div class="mini-img">
-            <img class="img" alt="Stock image of keys and a house"
-                 src="https://source.unsplash.com/1200x900/?keys,house,uk" />
+            <img class="img" alt="UK house exterior"
+              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1800&q=80" />
           </div>
         </div>
       </div>
@@ -425,23 +443,23 @@
     <div class="wrap">
       <div class="section-title">
         <h2>Contact</h2>
-        <p>Fastest way: call or text.</p>
+        <p>Fastest: call or text.</p>
       </div>
 
       <div class="card contact">
         <p style="margin:0 0 8px;">
           Phone: <a class="link" href="tel:07385337800">07385 337800</a>
-          <span style="color:var(--muted);">•</span>
+          <span style="color:var(--muted);"> • </span>
           Email: <a class="link" href="mailto:info@thelocklab.co.uk">info@thelocklab.co.uk</a>
         </p>
 
         <div class="row">
-          <a class="btn btn-gold" href="tel:07385337800">📞 Call 07385 337800</a>
-          <a class="btn" href="sms:07385337800">💬 Text (send a photo)</a>
+          <a class="btn btn-accent" href="tel:07385337800">📞 Call 07385 337800</a>
+          <a class="btn btn-primary" href="sms:07385337800">💬 Text (send a photo)</a>
         </div>
 
         <p class="note">
-          Tip: Text a photo of the lock/door + your area + what happened (“locked out”, “key snapped”, “burglary repair”).
+          If you text, include: your area + what happened + a photo of the lock/door if possible.
         </p>
       </div>
     </div>
